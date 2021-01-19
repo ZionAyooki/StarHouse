@@ -7,7 +7,8 @@ This project is a final project of the frontend course.
 ## Libraries in use
 
 - React
-- momentjs
+- react-router  
+- momentJS
 - Bootstrap
 - Font Awesome
 

@@ -1,0 +1,193 @@
+body {
+    font-family: "Rubik", sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+/* LogoLink */
+.logo-link {
+    display: flex;
+    align-items: baseline;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1;
+}
+.logo-link img {
+    max-width: 2rem;
+    height: auto;
+    margin-right: 0.25rem;
+}
+
+.top-bar .logo-link, .top-bar .logo-link:hover, .top-bar .logo-link:focus {
+    color: #1c1c1c;
+}
+.top-nav .logo-link, .top-nav .logo-link:hover, .top-nav .logo-link:focus {
+    color: #fff;
+}
+
+
+
+/* HeaderTopBar */
+.top-bar {
+    background-color: #fff;
+    padding: 0.75rem 0;
+}
+.top-info {
+    display: flex;
+    align-items: center;
+}
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+.info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    color: #fff;
+    background-color: #27A5A1;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+.info-description {
+    display: flex;
+    flex-direction: column;
+}
+.info-title {
+    color: #707079;
+}
+.info-link, .info-text {
+    color: #1c1c1c;
+    text-decoration: none;
+    margin-bottom: 0;
+}
+.info-link:hover, .info-link:focus {
+    color: #27A5A1;
+    text-decoration: underline;
+}
+
+
+
+/* HeaderNavBar */
+.top-nav {
+    background-color: #1c1c1c;
+    position: relative;
+    padding: 0.5rem 0;
+}
+.menu-button {
+    background-color: transparent;
+    color: #fff;
+    padding: 0.5rem 0.5rem 0.25rem;
+    border-radius: 0.25rem;
+    border: none;
+    transition: box-shadow 0.25s ease-in-out;
+}
+.menu-button:focus, .menu-button:hover {
+    outline: 0;
+    box-shadow: 0 0 0 0.125rem #fff;
+}
+.menu-button-icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.5rem;
+    height: 0.25rem;
+    transform: translateY(-50%);
+}
+.menu-button-icon::before, .menu-button-icon::after {
+    content: "";
+    background-color: #fff;
+    width: 1.5rem;
+    height: 0.25rem;
+    position: absolute;
+    left: 0;
+    transition: 0.3s ease-in;
+}
+.menu-button-icon::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+.menu-button-icon::after {
+    top: 0;
+    transform: rotate(135deg);
+}
+.menu-button.collapsed .menu-button-icon {
+    background-color: #fff;
+}
+.menu-button.collapsed .menu-button-icon::before {
+    bottom: 0.5rem;
+    transform: rotate(0deg);
+}
+.menu-button.collapsed .menu-button-icon::after {
+    top: 0.5rem;
+    transform: rotate(0deg);
+}
+
+#site-menu { /* this is for collapsing over the main, not pushing the main */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    z-index: 800;
+    background-color: #f2f3f4;
+}
+#site-menu .nav-link {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #040404;
+}
+#site-menu .nav-link:hover, #site-menu .nav-link:focus, #site-menu .nav-link.active {
+    background-color: #0DB5A7;
+}
+
+@media screen and (min-width: 992px){
+    .top-nav {
+        padding: 0;
+    }
+    #site-menu {
+        position: static;
+        background-color: #1c1c1c;
+    }
+    #site-menu .nav-link {
+        color: #fff;
+        padding: 1rem 0;
+    }
+    #site-menu .nav-item:not(:last-child) {
+        margin-right: 2rem;
+    }
+    #site-menu .nav-link:hover, #site-menu .nav-link:focus, #site-menu .nav-link.active {
+        background-color: #1c1c1c;
+        color: #0DB5A7;
+    }
+}
+
+
+/*!* Colors palate *!*/
+/*.just-for-testing-colors-ide {*/
+/*    color: #08d9d6;*/
+/*    color: #252a34;*/
+/*    color: #ff2e63;*/
+/*    color: #eaeaea;*/
+/*    color: #9ad5e7;*/
+/*    color: #127782;*/
+/*    color: #0592cd;*/
+/*    color: #2cc3c3;*/
+/*    color: #0474ac;*/
+/*    color: #8f57ba;*/
+/*    color: #fff;*/
+/*    color: #000;*/
+
+/*    light-green: #0DB5A7;*/
+/*    green: #0B8379; !* text with white *!*/
+/*    black: #081624; !* text *!*/
+/*    light-grey: #f2f3f4; !* For different BG *!*/
+/*    grey: #353649; !* header footer bg with white or light green *!*/
+/*    muted: #6F758B; !* With white *!*/
+/*    red: #EB003B; !* With white - page titles *!*/
+/*}*/
