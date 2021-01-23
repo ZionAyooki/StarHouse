@@ -4,6 +4,37 @@ body {
     color: #000;
 }
 
+
+
+/* General Overlay */
+.overlay-bg {
+    position: relative;
+}
+.overlay-bg > * {
+    position: relative;
+    z-index: 2;
+}
+.overlay-bg::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.7;
+    z-index: 1;
+    border-radius: inherit;
+    background-color: #081624;
+}
+.overlay-green::before {
+    background-color: #2b7a78;
+}
+.overlay-white::before {
+    background-color: #feffff;
+}
+
+
+
 /* LogoLink */
 .logo-link {
     display: flex;
@@ -166,6 +197,275 @@ body {
         color: #0DB5A7;
     }
 }
+
+
+
+/* HeroHeading */
+.hero-heading {
+    background: #fff url("../images/hero/house.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    min-height: 30vh;
+}
+.hero-lg {
+    min-height: 75vh;
+}
+.hero-box {
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.hero-title {
+    color: #10EAD8;
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+.hero-slogan {
+    color: #fff;
+    font-size: 1.125rem;
+}
+
+
+
+/* SectionHeading */
+.section-heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1c1c1c;
+    margin-bottom: 0.25rem;
+}
+.section-title-divider {
+    height: 0.5rem;
+    width: 5rem;
+    border-radius: 0.5rem;
+    background: #2b7a78;
+    margin: 0 auto 0.25rem;
+}
+.section-slogan {
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #686E82;
+}
+
+
+
+/* SearchForm */
+#search-form {
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 0.5rem 0.5rem #ccc;
+}
+.deal-type-row {
+    background-color: #3D3D3D;
+    display: flex;
+    justify-content: flex-start;
+}
+.deal-type-item {
+    position: relative;
+}
+.deal-type-item input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+}
+.deal-type-item label {
+    padding: 0.75rem 1.75rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #fff;
+}
+.deal-type-item input:checked + label {
+    background-color: #1E807D;
+}
+.deal-type-item input:focus + label {
+    outline: 0.125rem solid #fff;
+}
+#search-form .form-label, #search-form .form-legend {
+    padding-left: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    color: #6F758B;
+}
+#search-form .btn-more-options {
+    color: #27A5A1;
+    border-color: #27A5A1;
+    font-weight: 500;
+}
+#search-form .btn-more-options:hover, #search-form .btn-more-options:focus {
+    background-color: #0B8379;
+    color: #1c1c1c;
+}
+#search-form .btn-search, #search-form .btn-search:hover, #search-form .btn-search:focus {
+    background-color: #2b7a78;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+
+/* ComboBox */
+.form-combobox, .form-combobox-input {
+    position: relative;
+}
+.form-combobox-input input {
+    padding-right: 2.5rem;
+}
+.form-combobox-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-left: 1px solid #ced4da;
+    font-size: 0.75rem;
+    color: #212529;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.375rem 0.75rem;
+}
+.form-combobox-list {
+    list-style: none;
+    padding: 0;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 10rem;
+    border: 1px solid gray;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    display: none;
+}
+.form-combobox.open .form-combobox-list {
+    display: block;
+}
+.form-combobox-list li[role="option"] {
+    padding: 0.25rem 0.5rem;
+}
+.form-combobox-list li[role="option"]:hover, .form-combobox-list li[role="option"][aria-selected="true"] {
+    background-color: #def;
+    border-color: #8CCBF2;
+}
+
+
+
+/* Tiles and TileCard */
+.tile {
+    padding: 0.5rem 1rem;
+}
+.tile-image img {
+    display: block;
+    max-width: 5rem;
+    height: auto;
+    margin: 0 auto 1rem;
+}
+.tile-text {
+    color: #6e6e6e;
+}
+
+
+
+/* Testimonials and QuoteBubble */
+#testimonials {
+    margin: 4rem 0;
+    padding: 3rem 0;
+    background-color: #f2f3f4;
+}
+.testimonials-list {
+    justify-content: center;
+}
+.testimonials-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.testimonials-quote {
+    position: relative;
+    background-color: #2cc3c3;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.75rem;
+}
+.testimonials-item:nth-child(odd) .testimonials-quote:after {
+    content: "";
+    position: absolute;
+    left: 20%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 1.75rem 1.75rem 0;
+    border-color: transparent #2cc3c3 transparent transparent;
+}
+.testimonials-item:nth-child(even) .testimonials-quote:after {
+    content: "";
+    position: absolute;
+    right: 20%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0  0 1.75rem 1.75rem;
+    border-color: transparent  transparent transparent #2cc3c3;
+}
+.testimonials-quote blockquote {
+    padding: 0 0.5rem;
+    margin-bottom: 0;
+    color: #222;
+}
+.testimonials-person {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.testimonials-person-profile {
+    margin-right: 2rem;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #999;
+}
+.testimonials-person-profile img {
+    max-width: 4rem;
+    height: auto;
+    border-radius: 50%;
+}
+.testimonials-person-details {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.testimonials-person-name {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #0B8379;
+}
+.testimonials-person-city {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+
+
+
+
+
+
+
 
 
 /*!* Colors palate *!*/
