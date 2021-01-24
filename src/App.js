@@ -4,12 +4,16 @@ import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
+import SearchPage from "./pages/SearchPage";
 
 class App extends React.Component {
   render() {
     return (
       <HashRouter>
         <Switch>
+          <Route path="/search">
+            <SearchPage />
+          </Route>
           <Route exact path="/services">
             <ServicesPage />
           </Route>

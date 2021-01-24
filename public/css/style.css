@@ -556,6 +556,101 @@ body {
 
 
 
+/* SearchResults */
+.house-box {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 0.5rem #ccc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.house-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.house-head, .house-details {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+.house-address {
+    color: #005a6a;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+.house-type-map {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.house-details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.house-details-item {
+    display: flex;
+    flex-direction: column;
+}
+.house-details-item-title {
+    font-size: 0.875rem;
+    color: #6F758B;
+    margin-bottom: 0.125rem;
+}
+.house-details-item-info {
+    display: flex;
+    align-items: flex-end;
+}
+.house-details-item-info img {
+    max-width: 1.5rem;
+    height: auto;
+    margin-right: 0.25rem;
+}
+.house-details-item-info span {
+    font-weight: 500;
+    line-height: 1;
+}
+.house-description {
+    padding: 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+}
+.house-foot {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+}
+.house-price {
+    display: flex;
+    flex-direction: column;
+    color: #1E807D;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.house-price-title, .house-rent {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #666;
+}
+.btn-more-info {
+    background-color: #1E807D;
+    color: #fff;
+    font-weight: 500;
+}
+.btn-more-info:hover, .btn-more-info:focus {
+    background-color: #1B7471;
+    color: #fff;
+}
+
+
+
+
+
 
 
 
