@@ -66,6 +66,13 @@ export const data = {
     { id: 2, imageUrl: 'images/services/propertyManagement.jpg', title: 'Property management', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?' },
     { id: 3, imageUrl: 'images/services/evaluation.jpg', title: 'Evaluation services', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?' },
     { id: 4, imageUrl: 'images/services/projectManagement.jpg', title: 'Project management', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?' }
+  ],
+  agents: [
+    { id: 1, name: 'Main office' },
+    { id: 2, name: 'Zion Agent' },
+    { id: 3, name: 'Coral Agent' },
+    { id: 4, name: 'Top Agent' },
+    { id: 5, name: 'Slow Agent' }
   ]
 }
 

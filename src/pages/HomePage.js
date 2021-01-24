@@ -13,7 +13,7 @@ class HomePage extends React.Component {
     return (
       <div>
         <Header />
-        <HeroHeading isLarge={true} />
+        <HeroHeading isLarge={true} title="Star House Real Estate" slogan="Let us help you find your next dream home" />
         <br /><br /><br /><br /><br />
         <SearchForm />
         <br /><br /><br /><br /><br />
