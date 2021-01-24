@@ -68,11 +68,11 @@ export const data = {
     { id: 4, imageUrl: 'images/services/projectManagement.jpg', title: 'Project management', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?' }
   ],
   agents: [
-    { id: 1, name: 'Main office' },
-    { id: 2, name: 'Zion Agent' },
-    { id: 3, name: 'Coral Agent' },
-    { id: 4, name: 'Top Agent' },
-    { id: 5, name: 'Slow Agent' }
+    { id: 1, name: 'Main office', email: 'email@example.com', phone: '03-1234567', social: { facebook: 'https://www.facebook.com', instagram: 'https://www.instagram.com', twitter: 'https://www.twitter.com' }, profileImg: 'images/agents/profile.jpg' },
+    { id: 2, name: 'Zion Agent', email: 'email@example.com', phone: '03-1234567', social: { facebook: 'https://www.facebook.com', instagram: 'https://www.instagram.com', twitter: 'https://www.twitter.com' }, profileImg: 'images/agents/profile.jpg' },
+    { id: 3, name: 'Coral Agent', email: 'email@example.com', phone: '03-1234567', social: { facebook: 'https://www.facebook.com', instagram: 'https://www.instagram.com', twitter: 'https://www.twitter.com' }, profileImg: 'images/agents/profile.jpg' },
+    { id: 4, name: 'Top Agent', email: 'email@example.com', phone: '03-1234567', social: { facebook: 'https://www.facebook.com', instagram: 'https://www.instagram.com', twitter: 'https://www.twitter.com' }, profileImg: 'images/agents/profile.jpg' },
+    { id: 5, name: 'Slow Agent', email: 'email@example.com', phone: '03-1234567', social: { facebook: 'https://www.facebook.com', instagram: 'https://www.instagram.com', twitter: 'https://www.twitter.com' }, profileImg: 'images/agents/profile.jpg' }
   ]
 }
 
