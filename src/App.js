@@ -7,6 +7,7 @@ import ServicesPage from "./pages/ServicesPage";
 import SearchPage from "./pages/SearchPage";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import LoginPage from "./pages/LoginPage";
 
 class App extends React.Component {
   render() {
@@ -21,6 +22,9 @@ class App extends React.Component {
           </Route>
         </Switch>
         <Switch>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
           <Route path="/search">
             <SearchPage />
           </Route>
