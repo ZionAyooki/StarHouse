@@ -5,11 +5,21 @@ import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import SearchPage from "./pages/SearchPage";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 class App extends React.Component {
   render() {
     return (
       <HashRouter>
+        <Switch>
+          <Route path="/agents">
+
+          </Route>
+          <Route path="/">
+            <Header />
+          </Route>
+        </Switch>
         <Switch>
           <Route path="/search">
             <SearchPage />
@@ -27,6 +37,7 @@ class App extends React.Component {
             <HomePage />
           </Route>
         </Switch>
+        <Footer />
       </HashRouter>
     );
   }

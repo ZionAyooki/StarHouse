@@ -1,15 +1,12 @@
 import React from "react";
-import Header from "../components/header/Header";
 import HeroHeading from "../components/headings/HeroHeading";
 import SearchForm from "../components/forms/SearchForm";
-import Footer from "../components/footer/Footer";
 import SectionHeading from "../components/headings/SectionHeading";
 
 class SearchPage extends React.Component {
   render() {
     return (
-      <div>
-        <Header />
+      <main>
         <HeroHeading isLarge={false} title="Search" slogan="Your journey to your dream house starts here" />
         <br /><br /><br /><br /><br />
         <SearchForm />
@@ -391,8 +388,7 @@ class SearchPage extends React.Component {
           </div>
         </section>
         <br /><br /><br /><br /><br />
-        <Footer />
-      </div>
+      </main>
     );
   }
 }

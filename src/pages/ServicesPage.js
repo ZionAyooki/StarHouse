@@ -1,13 +1,10 @@
 import React from "react";
-import Header from "../components/header/Header";
 import HeroHeading from "../components/headings/HeroHeading";
-import Footer from "../components/footer/Footer";
 
 class ServicesPage extends React.Component {
   render() {
     return (
       <div>
-        <Header />
         <HeroHeading isLarge={false} title="Services" slogan="Here is a list of the services we provide to our clients." />
         <br /><br /><br /><br /><br />
         <section id="service1">
@@ -147,7 +144,6 @@ class ServicesPage extends React.Component {
           </div>
         </section>
         <br /><br /><br /><br /><br />
-        <Footer />
       </div>
     );
   }

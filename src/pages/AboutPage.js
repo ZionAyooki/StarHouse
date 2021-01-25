@@ -1,15 +1,12 @@
 import React from "react";
-import Header from "../components/header/Header";
 import HeroHeading from "../components/headings/HeroHeading";
-import Footer from "../components/footer/Footer";
 import SectionHeading from "../components/headings/SectionHeading";
 import TeamGallery from "../components/general/TeamGallery";
 
 class AboutPage extends React.Component {
   render() {
     return (
-      <div>
-        <Header />
+      <main>
         <HeroHeading isLarge={false} title="About us" />
         <br /><br /><br /><br /><br />
         <section>
@@ -84,8 +81,7 @@ class AboutPage extends React.Component {
         <br /><br /><br /><br /><br />
         <TeamGallery />
         <br /><br /><br /><br /><br />
-        <Footer />
-      </div>
+      </main>
     );
   }
 }
