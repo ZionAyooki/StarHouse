@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Main Office",
+    "email": "admin@email.com",
+    "phone": "03-1234567",
+    "imgUrl": "images/agents/profile.jpg",
+    "facebook": "https://www.facebook.com",
+    "twitter": "https://www.twitter.com",
+    "instagram": "https://www.instagram.com"
+  },
+  {
+    "id": 2,
+    "name": "Zion Ay",
+    "email": "zion@email.com",
+    "phone": "03-1234567",
+    "imgUrl": "images/agents/profile.jpg",
+    "facebook": "https://www.facebook.com",
+    "twitter": "https://www.twitter.com",
+    "instagram": "https://www.instagram.com"
+  },
+  {
+    "id": 3,
+    "name": "Killer Agent",
+    "email": "killer@email.com",
+    "phone": "03-1234567",
+    "imgUrl": "images/agents/profile.jpg",
+    "facebook": "https://www.facebook.com",
+    "twitter": "https://www.twitter.com",
+    "instagram": "https://www.instagram.com"
+  }
+]

@@ -34,6 +34,13 @@ body {
 }
 
 
+.section {
+    padding: 5rem 0;
+}
+.section:nth-child(odd) {
+    background-color: #f2f3f4;
+}
+
 
 /* LogoLink */
 .logo-link {

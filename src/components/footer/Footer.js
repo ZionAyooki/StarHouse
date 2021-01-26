@@ -1,6 +1,7 @@
 import React from "react";
 import LogoLink from "../logo/LogoLink";
 import moment from "moment";
+import {Link} from "react-router-dom";
 
 class Footer extends React.Component {
   render() {
@@ -49,39 +50,51 @@ class Footer extends React.Component {
             <div className="col-12 col-sm-6 col-lg-3 mb-3">
               <h2 className="footer-heading">Company</h2>
               <ul className="footer-links-group" role="presentation">
-                <li role="presentation"><a className="footer-link" href="#">About us</a></li>
-                <li role="presentation"><a className="footer-link" href="#">Services</a></li>
-                <li role="presentation"><a className="footer-link" href="#">Partners</a></li>
-                <li role="presentation"><a className="footer-link" href="#">Careers</a></li>
-                <li role="presentation"><a className="footer-link" href="#">Site map</a></li>
+                <li role="presentation">
+                  <Link to="/about" className="footer-link">About us</Link>
+                </li>
+                <li role="presentation">
+                  <Link to="/services" className="footer-link">Services</Link>
+                </li>
+                <li role="presentation">
+                  <Link to="/" className="footer-link">Partners</Link>
+                </li>
+                <li role="presentation">
+                  <Link to="/" className="footer-link">Careers</Link>
+                </li>
+                <li role="presentation">
+                  <Link to="/" className="footer-link">Site map</Link>
+                </li>
               </ul>
             </div>
             <div className="col-12 col-sm-6 col-lg-3 mb-3">
               <h2 className="footer-heading">Legal</h2>
               <ul className="footer-links-group" role="presentation">
-                <li role="presentation"><a className="footer-link" href="#">Terms of use</a></li>
-                <li role="presentation"><a className="footer-link" href="#">Privacy policy</a></li>
-                <li role="presentation"><a className="footer-link" href="#">Accessibility</a></li>
+                <li role="presentation">
+                  <Link to="/" className="footer-link">Terms of use</Link>
+                </li>
+                <li role="presentation">
+                  <Link to="/" className="footer-link">Privacy policy</Link>
+                </li>
+                <li role="presentation">
+                  <Link to="/" className="footer-link">Accessibility</Link>
+                </li>
               </ul>
             </div>
           </div>
           <div className="row">
             <div className="col-12 footer-social">
-              <a className="social-link" href="#">
+              <a className="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-facebook" aria-hidden={true}></i>
                 <span className="visually-hidden">Follow us on facebook</span>
               </a>
-              <a className="social-link" href="#">
+              <a className="social-link" href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-twitter" aria-hidden={true}></i>
                 <span className="visually-hidden">Follow us on twitter</span>
               </a>
-              <a className="social-link" href="#">
+              <a className="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-instagram" aria-hidden={true}></i>
                 <span className="visually-hidden">Follow us on instagram</span>
-              </a>
-              <a className="social-link" href="#">
-                <i className="fab fa-whatsapp" aria-hidden={true}></i>
-                <span className="visually-hidden">Follow us on whatsApp</span>
               </a>
             </div>
           </div>

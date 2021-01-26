@@ -2,392 +2,60 @@ import React from "react";
 import HeroHeading from "../components/headings/HeroHeading";
 import SearchForm from "../components/forms/SearchForm";
 import SectionHeading from "../components/headings/SectionHeading";
+import HouseCard from "../components/houses/HouseCard";
 
 class SearchPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchFilter: {},
+      houseList: this.props.houseList
+    };
+  }
+
+  updateHouses = (searchObj) => {
+    const newHouseList = this.props.houseList.filter((house) => {
+      if (house.dealTypeId !== searchObj.dealType) { return false; }
+      if (searchObj.region && house.regionId !== searchObj.region.id) { return false; }
+      if (searchObj.city && house.cityId !== searchObj.city.id) { return false; }
+      if (searchObj.houseType !== 0 && house.houseTypeId !== searchObj.houseType) { return false; }
+      if (searchObj.rooms.from && house.rooms < searchObj.rooms.from) { return false; }
+      if (searchObj.rooms.to && house.rooms > searchObj.rooms.to) { return false; }
+      if (searchObj.floor.from && house.floor < searchObj.floor.from) { return false; }
+      if (searchObj.floor.to && house.floor > searchObj.floor.to) { return false; }
+      if (searchObj.price.from && house.price < searchObj.price.from) { return false; }
+      if (searchObj.price.to && house.price > searchObj.price.to) { return false; }
+      if (searchObj.additions.parking && !house.additions.includes("Parking")) { return false; }
+      if (searchObj.additions.elevator && !house.additions.includes("Elevator")) { return false; }
+      if (searchObj.additions.balcony && !house.additions.includes("Balcony")) { return false; }
+      if (searchObj.additions.furniture && !house.additions.includes("Furniture")) { return false; }
+      if (searchObj.additions.pets && !house.additions.includes("Pets")) { return false; }
+      return true;
+    });
+    this.setState({
+      houseList: newHouseList
+    });
+  }
+
   render() {
+    const houseCards = this.state.houseList.map((house) => {
+      return (
+        <HouseCard key={house.id} house={house} />
+      );
+    })
     return (
       <main>
         <HeroHeading isLarge={false} title="Search" slogan="Your journey to your dream house starts here" />
-        <br /><br /><br /><br /><br />
-        <SearchForm />
-        <br /><br /><br /><br /><br />
-        <section id="promoted">
+        <SearchForm updateList={this.updateHouses} />
+        <section className="section">
           <div className="container">
             <SectionHeading title="Search Results" />
             <div className="row">
-              <div className="col-12 col-md-6 col-lg-4 mb-3">
-                <div className="house-box">
-                  <div>
-                    <img className="house-image" src="images/homes/home1.jpg" alt=""/>
-                    <div className="house-head">
-                      <h3 className="house-address">123th Some Address, City name</h3>
-                      <div className="house-type-map">
-                        <span>Penthouse</span>
-                        <span>
-                    <i className="fas fa-map-marker" aria-hidden="true"></i>
-                    Show on map
-                  </span>
-                      </div>
-                    </div>
-                    <div className="house-details">
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Floor</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/elevator.svg" alt=""/>
-                          <span>3</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Rooms</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/double-bed.svg" alt=""/>
-                          <span>4</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Size <small>(m<sup>2</sup>)</small></span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/house-size.svg" alt=""/>
-                          <span>320</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Entry</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/calendar.svg" alt=""/>
-                          <span>22/22</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="house-description">
-                      <strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                      asperiores consequatur deserunt dicta eaque, earum exercitationem explicabo hic labore nulla
-                      numquam obcaecati odio quas, rem saepe ut voluptatem. Explicabo, placeat?
-                    </div>
-                  </div>
-                  <div className="house-foot">
-                    <div className="house-price">
-                      <span className="house-price-title">For rent</span>
-                      <div>
-                        $4,000
-                        <span className="house-rent"> / month</span>
-                      </div>
-                    </div>
-                    <button className="btn btn-more-info">View Property</button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-md-6 col-lg-4 mb-3">
-                <div className="house-box">
-                  <div>
-                    <img className="house-image" src="images/homes/home1.jpg" alt=""/>
-                    <div className="house-head">
-                      <h3 className="house-address">123th Some Address, City name</h3>
-                      <div className="house-type-map">
-                        <span>Penthouse</span>
-                        <span>
-                    <i className="fas fa-map-marker" aria-hidden="true"></i>
-                    Show on map
-                  </span>
-                      </div>
-                    </div>
-                    <div className="house-details">
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Floor</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/elevator.svg" alt=""/>
-                          <span>3</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Rooms</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/double-bed.svg" alt=""/>
-                          <span>4</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Size <small>(m<sup>2</sup>)</small></span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/house-size.svg" alt=""/>
-                          <span>320</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Entry</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/calendar.svg" alt=""/>
-                          <span>22/22</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="house-description">
-                      <strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                      asperiores consequatur deserunt dicta eaque.
-                    </div>
-                  </div>
-                  <div className="house-foot">
-                    <div className="house-price">
-                      <span className="house-price-title">For rent</span>
-                      <div>
-                        $4,000
-                        <span className="house-rent"> / month</span>
-                      </div>
-                    </div>
-                    <button className="btn btn-more-info">View Property</button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-md-6 col-lg-4 mb-3">
-                <div className="house-box">
-                  <div>
-                    <img className="house-image" src="images/homes/home1.jpg" alt=""/>
-                    <div className="house-head">
-                      <h3 className="house-address">123th Some Address, City name</h3>
-                      <div className="house-type-map">
-                        <span>Penthouse</span>
-                        <span>
-                    <i className="fas fa-map-marker" aria-hidden="true"></i>
-                    Show on map
-                  </span>
-                      </div>
-                    </div>
-                    <div className="house-details">
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Floor</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/elevator.svg" alt=""/>
-                          <span>3</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Rooms</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/double-bed.svg" alt=""/>
-                          <span>4</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Size <small>(m<sup>2</sup>)</small></span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/house-size.svg" alt=""/>
-                          <span>320</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Entry</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/calendar.svg" alt=""/>
-                          <span>22/22</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="house-description">
-                      <strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                      asperiores consequatur deserunt dicta eaque, earum exercitationem explicabo hic labore nulla
-                      numquam obcaecati odio quas, rem saepe ut voluptatem. Explicabo, placeat?
-                    </div>
-                  </div>
-                  <div className="house-foot">
-                    <div className="house-price">
-                      <span className="house-price-title">For rent</span>
-                      <div>
-                        $4,000
-                        <span className="house-rent"> / month</span>
-                      </div>
-                    </div>
-                    <button className="btn btn-more-info">View Property</button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-md-6 col-lg-4 mb-3">
-                <div className="house-box">
-                  <div>
-                    <img className="house-image" src="images/homes/home1.jpg" alt=""/>
-                    <div className="house-head">
-                      <h3 className="house-address">123th Some Address, City name</h3>
-                      <div className="house-type-map">
-                        <span>Penthouse</span>
-                        <span>
-                    <i className="fas fa-map-marker" aria-hidden="true"></i>
-                    Show on map
-                  </span>
-                      </div>
-                    </div>
-                    <div className="house-details">
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Floor</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/elevator.svg" alt=""/>
-                          <span>3</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Rooms</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/double-bed.svg" alt=""/>
-                          <span>4</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Size <small>(m<sup>2</sup>)</small></span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/house-size.svg" alt=""/>
-                          <span>320</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Entry</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/calendar.svg" alt=""/>
-                          <span>22/22</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="house-description">
-                      <strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                      asperiores consequatur deserunt dicta eaque.
-                    </div>
-                  </div>
-                  <div className="house-foot">
-                    <div className="house-price">
-                      <span className="house-price-title">For rent</span>
-                      <div>
-                        $4,000
-                        <span className="house-rent"> / month</span>
-                      </div>
-                    </div>
-                    <button className="btn btn-more-info">View Property</button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-md-6 col-lg-4 mb-3">
-                <div className="house-box">
-                  <div>
-                    <img className="house-image" src="images/homes/home1.jpg" alt=""/>
-                    <div className="house-head">
-                      <h3 className="house-address">123th Some Address, City name</h3>
-                      <div className="house-type-map">
-                        <span>Penthouse</span>
-                        <span>
-                    <i className="fas fa-map-marker" aria-hidden="true"></i>
-                    Show on map
-                  </span>
-                      </div>
-                    </div>
-                    <div className="house-details">
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Floor</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/elevator.svg" alt=""/>
-                          <span>3</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Rooms</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/double-bed.svg" alt=""/>
-                          <span>4</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Size <small>(m<sup>2</sup>)</small></span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/house-size.svg" alt=""/>
-                          <span>320</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Entry</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/calendar.svg" alt=""/>
-                          <span>22/22</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="house-description">
-                      <strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                      asperiores consequatur deserunt dicta eaque, earum exercitationem explicabo hic labore nulla
-                      numquam obcaecati odio quas, rem saepe ut voluptatem. Explicabo, placeat?
-                    </div>
-                  </div>
-                  <div className="house-foot">
-                    <div className="house-price">
-                      <span className="house-price-title">For rent</span>
-                      <div>
-                        $4,000
-                        <span className="house-rent"> / month</span>
-                      </div>
-                    </div>
-                    <button className="btn btn-more-info">View Property</button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-md-6 col-lg-4 mb-3">
-                <div className="house-box">
-                  <div>
-                    <img className="house-image" src="images/homes/home1.jpg" alt=""/>
-                    <div className="house-head">
-                      <h3 className="house-address">123th Some Address, City name</h3>
-                      <div className="house-type-map">
-                        <span>Penthouse</span>
-                        <span>
-                    <i className="fas fa-map-marker" aria-hidden="true"></i>
-                    Show on map
-                  </span>
-                      </div>
-                    </div>
-                    <div className="house-details">
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Floor</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/elevator.svg" alt=""/>
-                          <span>3</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Rooms</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/double-bed.svg" alt=""/>
-                          <span>4</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Size <small>(m<sup>2</sup>)</small></span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/house-size.svg" alt=""/>
-                          <span>320</span>
-                        </div>
-                      </div>
-                      <div className="house-details-item">
-                        <span className="house-details-item-title">Entry</span>
-                        <div className="house-details-item-info">
-                          <img src="images/search/calendar.svg" alt=""/>
-                          <span>22/22</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="house-description">
-                      <strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                      asperiores consequatur deserunt dicta eaque.
-                    </div>
-                  </div>
-                  <div className="house-foot">
-                    <div className="house-price">
-                      <span className="house-price-title">For rent</span>
-                      <div>
-                        $4,000
-                        <span className="house-rent"> / month</span>
-                      </div>
-                    </div>
-                    <button className="btn btn-more-info">View Property</button>
-                  </div>
-                </div>
-              </div>
+              {houseCards}
             </div>
           </div>
         </section>
-        <br /><br /><br /><br /><br />
       </main>
     );
   }

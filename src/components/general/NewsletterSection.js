@@ -5,7 +5,7 @@ import NewsletterForm from "../forms/NewsletterForm";
 class NewsletterSection extends React.Component {
   render() {
     return (
-      <section id="newsletter">
+      <section className="section">
         <div className="container">
           <SectionHeading title="Newsletter" slogan="Our newsletter contains information for home owners and residents. Subscription is free." />
           <div className="row justify-content-center">

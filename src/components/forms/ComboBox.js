@@ -16,12 +16,16 @@ class ComboBox extends React.Component {
     this.input = React.createRef();
     this.listbox = React.createRef();
 
-    this.state = {
+    this.resetState = {
       search: '',
       isOpen: false,
       activeIndex: -1,
       currentList: this.props.list,
       currentCount: this.props.list.length
+    }
+
+    this.state = {
+      ...this.resetState
     };
   }
 
@@ -64,12 +68,9 @@ class ComboBox extends React.Component {
         break;
       case keyCodes.ESC:
         this.setState({
-          search: '',
-          isOpen: false,
-          activeIndex: -1,
-          currentList: this.props.list,
-          currentCount: this.props.list.length
+          ...this.resetState
         });
+        this.props.setItem(null);
         break;
       case keyCodes.RETURN:
         if (this.state.activeIndex > -1) {
@@ -169,6 +170,7 @@ class ComboBox extends React.Component {
       );
     });
     return (
+      // eslint-disable-next-line
       <div ref={this.combobox} className={`form-combobox ${this.state.isOpen ? 'open' : 'close'}`} role="combobox" aria-haspopup="listbox" aria-owns={`${name}-options`} aria-expanded={this.state.isOpen}>
         <label id={`${name}-label`} htmlFor={name} className="form-label">{label}</label>
         <div className="form-combobox-input">

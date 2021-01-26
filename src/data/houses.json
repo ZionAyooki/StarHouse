@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "dealTypeId": 1,
+    "regionId": 1,
+    "cityId": 1,
+    "address": "123th Street name",
+    "houseTypeId": 1,
+    "entryDate": "2021-01-25",
+    "rooms": 3,
+    "floor": 2,
+    "price": 4000,
+    "size": 80,
+    "additions": [
+      "Parking", "Elevator", "Balcony", "Pets"
+    ],
+    "imgUrl": "images/homes/home1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
+    "agentId": 1,
+    "createdAt": "01-01-2021"
+  }
+]

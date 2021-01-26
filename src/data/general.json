@@ -1,0 +1,103 @@
+{
+  "siteDetails": {
+    "address": "123th Street name, City",
+    "phone": "03-1234567",
+    "email": "office@starhouse.com",
+    "social": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "twitter",
+        "url": "https://www.twitter.com"
+      },
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com"
+      }
+    ]
+  },
+  "whyus": [
+    {
+      "id": 1,
+      "title": "Experience",
+      "imgUrl": "images/whyus/experience.png",
+      "description": "Our company is one of the oldest real estate companies, servicing clients for more than 25 years."
+    },
+    {
+      "id": 2,
+      "title": "Wide spread",
+      "imgUrl": "images/whyus/spread.png",
+      "description": "Our agents are spread across the country, from North to South, West to East."
+    },
+    {
+      "id": 3,
+      "title": "Large data",
+      "imgUrl": "images/whyus/data.png",
+      "description": "We have a large database of homes, if you are looking to buy or rent we got you covered."
+    },
+    {
+      "id": 4,
+      "title": "Great service",
+      "imgUrl": "images/whyus/service.png",
+      "description": "Customer services are very important for us. This is the reason we are in business for this long."
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Advisory services",
+      "imgUrl": "images/services/advisory.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
+    },
+    {
+      "id": 2,
+      "title": "Property management",
+      "imgUrl": "images/services/propertyManagement.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
+    },
+    {
+      "id": 3,
+      "title": "Evaluation services",
+      "imgUrl": "images/services/evaluation.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
+    },
+    {
+      "id": 4,
+      "title": "Project management",
+      "imgUrl": "images/services/projectManagement.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "person": "First and last",
+      "city": "Some city",
+      "imgUrl": "images/testimonials/profile.png",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
+    },
+    {
+      "id": 2,
+      "person": "First and last",
+      "city": "Some city",
+      "imgUrl": "images/testimonials/profile.png",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
+    },
+    {
+      "id": 3,
+      "person": "First and last",
+      "city": "Some city",
+      "imgUrl": "images/testimonials/profile.png",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
+    },
+    {
+      "id": 4,
+      "person": "First and last",
+      "city": "Some city",
+      "imgUrl": "images/testimonials/profile.png",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
+    }
+  ]
+}
