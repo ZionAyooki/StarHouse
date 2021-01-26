@@ -29,7 +29,8 @@ class AgentNavbar extends React.Component {
                   <NavLink exact to="/agents/messages" className="nav-link">Messages</NavLink>
                 </li>
                 <li className="nav-item ms-lg-auto">
-                  <NavLink exact to="/agents/profile" className="nav-link">My profile</NavLink>
+                  <button className="btn btn-danger" onClick={this.props.logout}>Logout</button>
+                  {/*<NavLink exact to="/agents/profile" className="nav-link">My profile</NavLink>*/}
                 </li>
               </ul>
             </div>

@@ -8,41 +8,46 @@ import SearchPage from "./pages/SearchPage";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import LoginPage from "./pages/LoginPage";
-import AgentNavbar from "./components/header/AgentNavbar";
-import AgentDashboardPage from "./pages/agents/AgentDashboardPage";
-import AgentPropertiesPage from "./pages/agents/AgentPropertiesPage";
-import AgentCalendarPage from "./pages/agents/AgentCalendarPage";
-import AgentMessagesPage from "./pages/agents/AgentMessagesPage";
 import HousePage from "./pages/HousePage";
 import houseList from "./data/houses.json";
+import AgentsRoutes from "./agents/AgentsRoutes";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeUser: null
+    };
+  }
+
+  loginUser = (userObj) => {
+    this.setState({
+      activeUser: userObj
+    });
+    window.location = "/#/agents/dashboard";
+  }
+
+  logoutUser = () => {
+    this.setState({
+      activeUser: null
+    });
+  }
+
   render() {
     return (
       <HashRouter>
         <Switch>
           <Route path="/agents">
-            <AgentNavbar />
+            <AgentsRoutes user={this.state.activeUser} login={this.loginUser} logout={this.logoutUser} />
           </Route>
           <Route path="/">
             <Header />
           </Route>
         </Switch>
         <Switch>
-          <Route path="/agents/messages">
-            <AgentMessagesPage />
-          </Route>
-          <Route path="/agents/calendar">
-            <AgentCalendarPage />
-          </Route>
-          <Route path="/agents/properties">
-            <AgentPropertiesPage />
-          </Route>
-          <Route path="/agents/dashboard">
-            <AgentDashboardPage />
-          </Route>
           <Route path="/login">
-            <LoginPage />
+            <LoginPage user={this.state.activeUser} login={this.loginUser} />
           </Route>
           <Route path="/search/:id">
             <HousePage />

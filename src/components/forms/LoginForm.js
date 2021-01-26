@@ -1,4 +1,5 @@
 import React from "react";
+import AgentsData from "../../data/agents.json";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -18,9 +19,17 @@ class LoginForm extends React.Component {
     });
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const userObj = AgentsData.find(user => user.email === this.state.username);
+    if (userObj && userObj.password === this.state.password) {
+      this.props.login(userObj);
+    }
+  }
+
   render() {
     return (
-      <form id="agent-login" onSubmit={(e) => e.preventDefault()}>
+      <form id="agent-login" onSubmit={this.handleSubmit}>
         <div className="input-group mb-3">
           <label htmlFor="agent-user" className="input-group-text">
             <i className="fas fa-user" aria-hidden="true"></i>

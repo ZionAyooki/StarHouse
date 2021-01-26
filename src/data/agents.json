@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "password": "123456",
     "name": "Main Office",
     "email": "admin@email.com",
     "phone": "03-1234567",
@@ -11,6 +12,7 @@
   },
   {
     "id": 2,
+    "password": "123456",
     "name": "Zion Ay",
     "email": "zion@email.com",
     "phone": "03-1234567",
@@ -21,6 +23,7 @@
   },
   {
     "id": 3,
+    "password": "123456",
     "name": "Killer Agent",
     "email": "killer@email.com",
     "phone": "03-1234567",
