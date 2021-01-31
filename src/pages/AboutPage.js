@@ -7,9 +7,8 @@ class AboutPage extends React.Component {
   render() {
     return (
       <main>
-        <HeroHeading isLarge={false} title="About us" />
-        <br /><br /><br /><br /><br />
-        <section>
+        <HeroHeading title="About us" />
+        <section className="section">
           <div className="container">
             <SectionHeading title="History" slogan="How it all started" />
             <div className="row">
@@ -43,8 +42,7 @@ class AboutPage extends React.Component {
             </div>
           </div>
         </section>
-        <br /><br /><br /><br /><br />
-        <section>
+        <section className="section">
           <div className="container">
             <SectionHeading title="Our vision" slogan="How do we see ourselves and our great service." />
             <div className="row">
@@ -78,9 +76,7 @@ class AboutPage extends React.Component {
             </div>
           </div>
         </section>
-        <br /><br /><br /><br /><br />
-        <TeamGallery />
-        <br /><br /><br /><br /><br />
+        <TeamGallery list={this.props.allAgents.filter(agent => agent.showInGallery)} />
       </main>
     );
   }

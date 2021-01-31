@@ -3,6 +3,21 @@
     {"id": 1, "name": "rent"},
     {"id": 2, "name": "sale"}
   ],
+  "houseTypes": [
+    {"id": 0, "name": "All", "code": "all"},
+    {"id": 1, "name": "Apartment", "code": "apartment"},
+    {"id": 2, "name": "Garden House", "code": "garden"},
+    {"id": 3, "name": "Villa", "code": "villa"},
+    {"id": 4, "name": "Penthouse", "code": "penthouse"},
+    {"id": 5, "name": "Residential Unit", "code": "unit"}
+  ],
+  "additions": [
+    {"id": 1, "name": "Parking"},
+    {"id": 2, "name": "Elevator"},
+    {"id": 3, "name": "Balcony"},
+    {"id": 4, "name": "Furniture"},
+    {"id": 5, "name": "Pets"}
+  ],
   "regions": [
     {"id": 1, "name": "North"},
     {"id": 2, "name": "Sharon"},
@@ -45,13 +60,5 @@
     {"id": 30, "regionId": 7, "name": "Eilat"},
     {"id": 31, "regionId": 7, "name": "Beer Ora"},
     {"id": 32, "regionId": 7, "name": "Eilot"}
-  ],
-  "houseTypes": [
-    {"id": 0, "name": "All", "code": "all"},
-    {"id": 1, "name": "Apartment", "code": "apartment"},
-    {"id": 2, "name": "Garden House", "code": "garden"},
-    {"id": 3, "name": "Villa", "code": "villa"},
-    {"id": 4, "name": "Penthouse", "code": "penthouse"},
-    {"id": 5, "name": "Residential Unit", "code": "unit"}
   ]
 }

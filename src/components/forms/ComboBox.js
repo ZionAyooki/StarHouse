@@ -24,8 +24,15 @@ class ComboBox extends React.Component {
       currentCount: this.props.list.length
     }
 
+    const activeItemData = {};
+    if (this.props.activeItem) {
+      activeItemData.search = this.props.activeItem.name;
+      activeItemData.currentList = [this.props.activeItem];
+      activeItemData.currentCount = 1;
+    }
     this.state = {
-      ...this.resetState
+      ...this.resetState,
+      ...activeItemData
     };
   }
 
@@ -37,7 +44,7 @@ class ComboBox extends React.Component {
     document.body.removeEventListener('click', this.handleBlur);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     if (this.state.isOpen && this.state.activeIndex > -1) {
       this.handleScrollToView(`${this.props.name}-${this.state.currentList[this.state.activeIndex].id}`);
     }
@@ -138,7 +145,7 @@ class ComboBox extends React.Component {
   selectItem = (index) => {
     if (index > -1 && index < this.state.currentCount) {
       this.setState((prevState) => {
-        this.props.setItem(prevState.currentList[index]);
+        this.props.setItem(prevState.currentList[index].id);
         return {
           search: prevState.currentList[index].name,
           isOpen: false,

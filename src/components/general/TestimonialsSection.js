@@ -1,11 +1,10 @@
 import React from "react";
 import SectionHeading from "../headings/SectionHeading";
-import {data} from "../../data/fakeData";
 import QuoteBubble from "./QuoteBubble";
 
 class TestimonialsSection extends React.Component {
   render() {
-    const quotes = data.testimonials.map((quote) => {
+    const quotes = this.props.data.map((quote) => {
       return <QuoteBubble key={quote.id} bubble={quote} />
     });
     return (

@@ -1,0 +1,14 @@
+{
+  "dealType": 3,
+  "houseType": 6,
+  "addition": 6,
+  "region": 8,
+  "city": 33,
+  "agent": 5,
+  "house": 6,
+  "meeting": 9,
+  "message": 6,
+  "service": 6,
+  "testimonial": 5,
+  "random": 100
+}

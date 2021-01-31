@@ -1,0 +1,19 @@
+{
+  "dealType": 1,
+  "regionId": null,
+  "cityId": null,
+  "houseType": 0,
+  "roomsFrom": "",
+  "roomsTo": "",
+  "floorFrom": "",
+  "floorTo": "",
+  "priceFrom": "",
+  "priceTo": "",
+  "additions": {
+    "parking": false,
+    "elevator": false,
+    "balcony": false,
+    "furniture": false,
+    "pets": false
+  }
+}

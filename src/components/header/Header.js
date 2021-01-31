@@ -7,7 +7,7 @@ class Header extends React.Component {
     return (
       <div>
         <header className="site-header">
-          <HeaderTopBar />
+          <HeaderTopBar siteDetails={this.props.siteDetails} />
           <HeaderNavBar />
         </header>
       </div>

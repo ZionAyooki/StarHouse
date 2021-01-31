@@ -1,14 +1,14 @@
 import React from "react";
-import MyData from "../../data/addresses.json"
 import moment from "moment";
 import {Link} from "react-router-dom";
 
 class HouseCard extends React.Component {
   render() {
     const { house } = this.props;
-    const city = MyData.cities.find(item => item.id === house.cityId).name;
-    const houseType = MyData.houseTypes.find(item => item.id === house.houseTypeId).name;
-    const dealType = MyData.dealTypes.find(item => item.id === house.dealTypeId).name;
+    const city = this.props.categories.cities.find(item => item.id === house.cityId).name;
+    const houseType = this.props.categories.houseTypes.find(item => item.id === house.houseTypeId).name;
+    const dealType = this.props.categories.dealTypes.find(item => item.id === house.dealTypeId).name;
+    const entryDate = moment(house.entryDate).diff(moment()) > 0 ? moment(house.entryDate).format('DD/MM') : moment().format('DD/MM');
     return (
       <div className="col-12 col-md-6 col-lg-4 mb-3">
         <div className="house-box">
@@ -50,7 +50,7 @@ class HouseCard extends React.Component {
                 <span className="house-details-item-title">Entry</span>
                 <div className="house-details-item-info">
                   <img src="images/search/calendar.svg" alt=""/>
-                  <span>{moment(house.entryDate).format('DD/MM')}</span>
+                  <span>{entryDate}</span>
                 </div>
               </div>
             </div>

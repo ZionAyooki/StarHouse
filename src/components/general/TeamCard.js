@@ -2,11 +2,11 @@ import React from "react";
 
 class TeamCard extends React.Component {
   render() {
-    const { name, email, phone, profileImg } = this.props.agent;
+    const { name, email, phone, imgUrl } = this.props.agent;
     return (
       <div className="col">
         <div className="card">
-          <img className="card-img-top" src={profileImg} alt={name} />
+          <img className="card-img-top" src={imgUrl} alt={name} />
           <div className="card-body">
             <h3 className="card-title">{name}</h3>
             <div className="d-flex flex-column">

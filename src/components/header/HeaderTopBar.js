@@ -14,7 +14,7 @@ class HeaderTopBar extends React.Component {
               </div>
               <div className="info-description">
                 <span className="info-title">Phone:</span>
-                <a className="info-link" href="tel:+97231111111">03-1234567</a>
+                <a className="info-link" href={`tel:${this.props.siteDetails.phone}`}>{this.props.siteDetails.phone}</a>
               </div>
             </div>
             <div className="info-item">
@@ -23,7 +23,7 @@ class HeaderTopBar extends React.Component {
               </div>
               <div className="info-description">
                 <span className="info-title">Address:</span>
-                <address className="info-text">123rd Default Street, Tel Aviv</address>
+                <address className="info-text">{this.props.siteDetails.address}</address>
               </div>
             </div>
             <div className="info-item">
@@ -32,7 +32,7 @@ class HeaderTopBar extends React.Component {
               </div>
               <div className="info-description">
                 <span className="info-title">Email:</span>
-                <a className="info-link" href="mailto:example@email.com">example@email.com</a>
+                <a className="info-link" href={`mailto:${this.props.siteDetails.email}`}>{this.props.siteDetails.email}</a>
               </div>
             </div>
           </div>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "showInGallery": true,
+    "username": "Admin",
+    "password": "123456",
+    "name": "Main Office",
+    "email": "admin@email.com",
+    "phone": "03-1234567",
+    "imgUrl": "images/agents/profile.jpg",
+    "social": {
+      "facebook": "https://www.facebook.com",
+      "twitter": "https://www.twitter.com",
+      "instagram": "https://www.instagram.com"
+    }
+  },
+  {
+    "id": 2,
+    "showInGallery": true,
+    "username": "Zion",
+    "password": "123456",
+    "name": "Zion Ay",
+    "email": "zion@email.com",
+    "phone": "03-1234567",
+    "imgUrl": "images/agents/profile.jpg",
+    "social": {
+      "facebook": "https://www.facebook.com",
+      "twitter": "https://www.twitter.com",
+      "instagram": "https://www.instagram.com"
+    }
+  },
+  {
+    "id": 3,
+    "showInGallery": true,
+    "username": "Killer",
+    "password": "123456",
+    "name": "Killer Agent",
+    "email": "killer@email.com",
+    "phone": "03-1234567",
+    "imgUrl": "images/agents/profile.jpg",
+    "social": {
+      "facebook": "https://www.facebook.com",
+      "twitter": "https://www.twitter.com",
+      "instagram": "https://www.instagram.com"
+    }
+  },
+  {
+    "id": 4,
+    "showInGallery": true,
+    "username": "Babyface",
+    "password": "123456",
+    "name": "Babyface Agent",
+    "email": "babyface@email.com",
+    "phone": "03-1234567",
+    "imgUrl": "images/agents/profile.jpg",
+    "social": {
+      "facebook": "https://www.facebook.com",
+      "twitter": "https://www.twitter.com",
+      "instagram": "https://www.instagram.com"
+    }
+  }
+]

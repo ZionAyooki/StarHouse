@@ -1,22 +1,14 @@
 {
   "siteDetails": {
-    "address": "123th Street name, City",
+    "name": "StarHouse",
+    "address": "123rd Default Street, Tel Aviv",
     "phone": "03-1234567",
     "email": "office@starhouse.com",
-    "social": [
-      {
-        "name": "facebook",
-        "url": "https://www.facebook.com"
-      },
-      {
-        "name": "twitter",
-        "url": "https://www.twitter.com"
-      },
-      {
-        "name": "instagram",
-        "url": "https://www.instagram.com"
-      }
-    ]
+    "social": {
+      "facebook": "https://www.facebook.com",
+      "twitter": "https://www.twitter.com",
+      "instagram": "https://www.instagram.com"
+    }
   },
   "whyus": [
     {
@@ -47,25 +39,41 @@
   "services": [
     {
       "id": 1,
+      "showOnHomepage": false,
+      "title": "Brokerage services",
+      "slogan": "If you're looking to sell or rent your property, we can help.",
+      "imgUrl": "images/services/projectManagement.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
+    },
+    {
+      "id": 2,
+      "showOnHomepage": true,
       "title": "Advisory services",
+      "slogan": "we provide advisory services to home owners.",
       "imgUrl": "images/services/advisory.jpg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
     },
     {
-      "id": 2,
+      "id": 3,
+      "showOnHomepage": true,
       "title": "Property management",
+      "slogan": "we provide all the needs for managing and maintaining your property.",
       "imgUrl": "images/services/propertyManagement.jpg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
     },
     {
-      "id": 3,
+      "id": 4,
+      "showOnHomepage": true,
       "title": "Evaluation services",
+      "slogan": "If you need an evaluation for your property, we can estimate its value.",
       "imgUrl": "images/services/evaluation.jpg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
     },
     {
-      "id": 4,
+      "id": 5,
+      "showOnHomepage": true,
       "title": "Project management",
+      "slogan": "we provide project management services, from the idea to the finished project.",
       "imgUrl": "images/services/projectManagement.jpg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur debitis distinctio dolorum eos eveniet iure necessitatibus nisi odit, provident quo repellendus similique temporibus, vitae voluptate. Adipisci labore tempora veniam?"
     }

@@ -1,70 +1,34 @@
 import React from "react";
 import ComboBox from "./ComboBox";
-
-//Data
-import MyData from '../../data/addresses.json';
+import DealTypeRadio from "./uiElements/DealTypeRadio";
 
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      dealType: 1,
-      region: null,
-      city: null,
-      houseType: 0,
-      rooms: { from: '', to: '' },
-      floor: { from: '', to: '' },
-      price: { from: '', to: '' },
-      additions: {
-        parking: false,
-        elevator: false,
-        balcony: false,
-        furniture: false,
-        pets: false
-      }
+      ...this.props.searchState,
+      activeCities: this.props.categories.cities
     };
   }
 
-  handleChangeDeal = (e) => {
-    this.setState({
-      dealType: parseInt(e.target.value)
-    });
-  }
-
-  handleChangeRegion = (region) => {
-    let cityObj = this.state.city;
-    if (cityObj) {
-      cityObj = region && this.state.city.regionId === region.id ? cityObj : null;
-    }
-    this.setState({
-      region: region,
-      city: cityObj
-    });
-  }
-
-  handleChangeCity = (city) => {
-    this.setState({
-      city: city
-    });
-  }
-
-  handleChangeHouseType = (e) => {
+  handleChangeNumber = (e) => {
+    const newVal = e.target.value !== '' ? parseInt(e.target.value) : '';
     this.setState(() => ({
-      houseType: parseInt(e.target.value)
+      [e.target.name]: newVal
     }));
   }
 
-  handleChangeNumber = (e) => {
-    const el = e.target;
-    const key = el.getAttribute('data-key');
-    const subkey = el.getAttribute('data-subkey');
-    const newVal = parseInt(el.value) || '';
+  handleChangeRegion = (regionId) => {
     this.setState((prevState) => ({
-      [key]: {
-        ...prevState[key],
-        [subkey]: newVal
-      }
+      regionId: regionId,
+      cityId: (!regionId || (prevState.cityId && this.props.getCityById(prevState.cityId).regionId === regionId)) ? prevState.cityId : null,
+      activeCities: this.props.getCitiesByRegion(regionId)
+    }));
+  }
+  handleChangeCity = (cityId) => {
+    this.setState(() => ({
+      cityId: cityId
     }));
   }
 
@@ -80,28 +44,25 @@ class SearchForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.updateList(this.state);
+    const searchObj = { ...this.state };
+    delete searchObj.activeCities;
+    this.props.searchUpdate(searchObj);
   }
 
+  /*
+  searchState={this.props.searchState} searchUpdate={this.props.searchUpdate} categories={this.props.categories}
+            getCitiesByRegion={this.props.getCitiesByRegion} getRegionByCity={this.props.getRegionByCity}
+   */
+
   render() {
-    const dealTypes = MyData.dealTypes.map((item) => {
-      return (
-        <div className="deal-type-item" key={item.id}>
-          <input
-            id={`dealType-${item.name}`} type="radio" name="dealType" value={item.id}
-            checked={this.state.dealType === item.id} onChange={this.handleChangeDeal}
-          />
-          <label htmlFor={`dealType-${item.name}`}>For {item.name}</label>
-        </div>
-      );
+    const dealTypes = this.props.categories.dealTypes.map((item) => {
+      return <DealTypeRadio key={item.id} deal={item} status={this.state.dealType === item.id} handleChange={this.handleChangeNumber} />
     });
-    const regionsList = MyData.regions;
-    const citiesList = MyData.cities.filter((city) => {
-      return this.state.region === null || city.regionId === this.state.region.id;
-    });
-    const houseTypesList = MyData.houseTypes.map((item) => {
+    const regionsList = this.props.categories.regions;
+    const houseTypes = this.props.categories.houseTypes.map((item) => {
       return <option key={item.id} value={item.id}>{item.name}</option>
     });
+
     return (
       <div className="container mb-5">
         <form id="search-form" onSubmit={this.handleSubmit}>
@@ -111,19 +72,26 @@ class SearchForm extends React.Component {
           </fieldset>
           <div className="row mx-0 py-3">
             <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
-              <ComboBox name="region" label="Region" list={regionsList} setItem={this.handleChangeRegion} />
+              <ComboBox
+                name="region" label="Region" list={regionsList} setItem={this.handleChangeRegion}
+                activeItem={this.props.getRegionById(this.state.regionId)}
+              />
             </div>
             <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
-              <ComboBox name="city" label="City" list={citiesList} setItem={this.handleChangeCity} key={this.state.region ? this.state.region.id : 0} />
+              <ComboBox
+                name="city" label="City" setItem={this.handleChangeCity} activeItem={this.props.getCityById(this.state.cityId)}
+                list={[...this.state.activeCities].sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)}
+                key={this.state.regionId !== null ? this.state.regionId : 0}
+              />
             </div>
             <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
               <div className="select-group">
                 <label htmlFor="type" className="form-label">House Type</label>
                 <select
                   id="type" className="form-select" name="houseType"
-                  defaultValue={this.state.houseType} onChange={this.handleChangeHouseType}
+                  defaultValue={this.state.houseType} onChange={this.handleChangeNumber}
                 >
-                  {houseTypesList}
+                  {houseTypes}
                 </select>
               </div>
             </div>
@@ -138,42 +106,48 @@ class SearchForm extends React.Component {
                 <fieldset className="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
                   <legend className="form-legend">Rooms</legend>
                   <div className="input-group">
-                    <label htmlFor="rooms-from" className="visually-hidden">Rooms from</label>
-                    <input id="rooms-from" type="number" className="form-control" placeholder="From" data-key="rooms" data-subkey="from"
-                           value={this.state.rooms.from} onChange={this.handleChangeNumber}
+                    <label htmlFor="roomsFrom" className="visually-hidden">Rooms from</label>
+                    <input
+                      id="roomsFrom" type="number" className="form-control" placeholder="From" name="roomsFrom"
+                      value={this.state.roomsFrom} onChange={this.handleChangeNumber}
                     />
                     <span className="input-group-text">--</span>
-                    <label htmlFor="rooms-to" className="visually-hidden">Rooms to</label>
-                    <input id="rooms-to" type="number" className="form-control" placeholder="To" data-key="rooms" data-subkey="to"
-                           value={this.state.rooms.to} onChange={this.handleChangeNumber}
+                    <label htmlFor="roomsTo" className="visually-hidden">Rooms to</label>
+                    <input
+                      id="roomsTo" type="number" className="form-control" placeholder="To" name="roomsTo"
+                      value={this.state.roomsTo} onChange={this.handleChangeNumber}
                     />
                   </div>
                 </fieldset>
                 <fieldset className="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
                   <legend className="form-legend">Floor</legend>
                   <div className="input-group">
-                    <label htmlFor="floor-from" className="visually-hidden">Floor from</label>
-                    <input id="floor-from" type="number" className="form-control" placeholder="From" data-key="floor" data-subkey="from"
-                           value={this.state.floor.from} onChange={this.handleChangeNumber}
+                    <label htmlFor="floorFrom" className="visually-hidden">Floor from</label>
+                    <input
+                      id="floorFrom" type="number" className="form-control" placeholder="From" name="floorFrom"
+                      value={this.state.floorFrom} onChange={this.handleChangeNumber}
                     />
                     <span className="input-group-text">--</span>
-                    <label htmlFor="floor-to" className="visually-hidden">Floor to</label>
-                    <input id="floor-to" type="number" className="form-control" placeholder="To" data-key="floor" data-subkey="to"
-                           value={this.state.floor.to} onChange={this.handleChangeNumber}
+                    <label htmlFor="floorTo" className="visually-hidden">Floor to</label>
+                    <input
+                      id="floorTo" type="number" className="form-control" placeholder="To" name="floorTo"
+                      value={this.state.floorTo} onChange={this.handleChangeNumber}
                     />
                   </div>
                 </fieldset>
                 <fieldset className="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
                   <legend className="form-legend">Price</legend>
                   <div className="input-group">
-                    <label htmlFor="price-from" className="visually-hidden">Price from</label>
-                    <input id="price-from" type="number" className="form-control" placeholder="From" data-key="price" data-subkey="from"
-                           value={this.state.price.from} onChange={this.handleChangeNumber}
+                    <label htmlFor="priceFrom" className="visually-hidden">Price from</label>
+                    <input
+                      id="priceFrom" type="number" className="form-control" step={100} placeholder="From" name="priceFrom"
+                      value={this.state.priceFrom} onChange={this.handleChangeNumber}
                     />
                     <span className="input-group-text">--</span>
-                    <label htmlFor="price-to" className="visually-hidden">Price to</label>
-                    <input id="price-to" type="number" className="form-control" placeholder="To" data-key="price" data-subkey="to"
-                           value={this.state.price.to} onChange={this.handleChangeNumber}
+                    <label htmlFor="priceTo" className="visually-hidden">Price to</label>
+                    <input
+                      id="priceTo" type="number" className="form-control" step={100} placeholder="To" name="priceTo"
+                      value={this.state.priceTo} onChange={this.handleChangeNumber}
                     />
                   </div>
                 </fieldset>

@@ -1,5 +1,4 @@
 import React from "react";
-import AgentsData from "../../data/agents.json";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -12,18 +11,15 @@ class LoginForm extends React.Component {
   }
 
   handleChange = (e) => {
-    const newVal = e.target.value;
-    const key = e.target.getAttribute('data-name');
-    this.setState({
-      [key]: newVal
-    });
+    this.setState(() => ({
+      [e.target.name]: e.target.value
+    }));
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const userObj = AgentsData.find(user => user.email === this.state.username);
-    if (userObj && userObj.password === this.state.password) {
-      this.props.login(userObj);
+    if (this.props.isValidLogin(this.state.username, this.state.password)) {
+      this.props.handleLogin(this.state.username, this.state.password);
     }
   }
 
@@ -33,10 +29,10 @@ class LoginForm extends React.Component {
         <div className="input-group mb-3">
           <label htmlFor="agent-user" className="input-group-text">
             <i className="fas fa-user" aria-hidden="true"></i>
-            <span className="visually-hidden">Username</span>
+            <span className="visually-hidden">Email</span>
           </label>
           <input
-            id="agent-user" type="email" className="form-control" placeholder="Username" data-name="username"
+            id="agent-user" type="email" className="form-control" placeholder="email@example.com" name="username"
             value={this.state.username} onChange={this.handleChange}
           />
         </div>
@@ -46,16 +42,10 @@ class LoginForm extends React.Component {
             <span className="visually-hidden">Password</span>
           </label>
           <input
-            id="agent-pass" type="password" className="form-control" placeholder="Password" data-name="password"
+            id="agent-pass" type="password" className="form-control" placeholder="Password" name="password"
             value={this.state.password} onChange={this.handleChange}
           />
         </div>
-        {/*<div className="mb-3 form-check">*/}
-        {/*  <label className="form-check-label">*/}
-        {/*    <input type="checkbox" className="form-check-input" id="agent-remember"/>*/}
-        {/*    Remember me*/}
-        {/*  </label>*/}
-        {/*</div>*/}
         <div className="text-center">
           <button type="submit" className="btn btn-primary">Login</button>
         </div>

@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "dealTypeId": 1,
+    "regionId": 1,
+    "cityId": 1,
+    "address": "123th Street name",
+    "houseTypeId": 1,
+    "entryDate": "2021-01-25",
+    "rooms": 3,
+    "floor": 2,
+    "price": 4000,
+    "size": 80,
+    "additions": [
+      "Parking", "Elevator", "Balcony", "Pets"
+    ],
+    "imgUrl": "images/homes/home1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
+    "agentId": 1,
+    "createdAt": "2021-01-25",
+    "closedAt": null
+  },
+  {
+    "id": 2,
+    "dealTypeId": 1,
+    "regionId": 3,
+    "cityId": 11,
+    "address": "Hashalom 23",
+    "houseTypeId": 2,
+    "entryDate": "2021-01-25",
+    "rooms": 4,
+    "floor": 1,
+    "price": 6000,
+    "size": 130,
+    "additions": [
+      "Parking", "Balcony", "Pets"
+    ],
+    "imgUrl": "images/homes/home1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
+    "agentId": 1,
+    "createdAt": "2021-01-25",
+    "closedAt": null
+  },
+  {
+    "id": 3,
+    "dealTypeId": 2,
+    "regionId": 4,
+    "cityId": 16,
+    "address": "Yafo 23",
+    "houseTypeId": 3,
+    "entryDate": "2021-01-25",
+    "rooms": 3,
+    "floor": 4,
+    "price": 3500,
+    "size": 120,
+    "additions": [
+      "Parking", "Balcony"
+    ],
+    "imgUrl": "images/homes/home1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
+    "agentId": 1,
+    "createdAt": "2021-01-25",
+    "closedAt": null
+  },
+  {
+    "id": 4,
+    "dealTypeId": 2,
+    "regionId": 4,
+    "cityId": 16,
+    "address": "Shlomzion Hamalka 51",
+    "houseTypeId": 1,
+    "entryDate": "2021-01-25",
+    "rooms": 3,
+    "floor": 4,
+    "price": 3500,
+    "size": 120,
+    "additions": [
+      "Parking", "Balcony", "Furniture"
+    ],
+    "imgUrl": "images/homes/home1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
+    "agentId": 1,
+    "createdAt": "2021-01-25",
+    "closedAt": null
+  },
+  {
+    "id": 5,
+    "dealTypeId": 1,
+    "regionId": 4,
+    "cityId": 16,
+    "address": "Emek Refaim 23",
+    "houseTypeId": 2,
+    "entryDate": "2021-01-25",
+    "rooms": 5,
+    "floor": 2,
+    "price": 3500,
+    "size": 120,
+    "additions": [
+      "Parking", "Balcony"
+    ],
+    "imgUrl": "images/homes/home1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
+    "agentId": 1,
+    "createdAt": "2021-01-25",
+    "closedAt": null
+  }
+]

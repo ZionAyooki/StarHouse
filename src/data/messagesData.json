@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Some person",
+    "email": "someone@email.com",
+    "phone": "03-1234567",
+    "subject": "This is a subject",
+    "msg": "This is the message.",
+    "agentId": 1,
+    "createdAt": "2021-01-28 16:00",
+    "markRead": true
+  },
+  {
+    "id": 2,
+    "name": "Steve jobs",
+    "email": "someone@email.com",
+    "phone": "03-1234567",
+    "subject": "The new apple watch",
+    "msg": "Bla bla bla bla.",
+    "agentId": 1,
+    "createdAt": "2021-01-29 12:00",
+    "markRead": false
+  },
+  {
+    "id": 3,
+    "name": "The yacht club",
+    "email": "someone@email.com",
+    "phone": "03-1234567",
+    "subject": "Your weekend holiday",
+    "msg": "This is the message.",
+    "agentId": 1,
+    "createdAt": "2021-01-29 16:00",
+    "markRead": true
+  },
+  {
+    "id": 4,
+    "name": "Kermit the frog",
+    "email": "someone@email.com",
+    "phone": "03-1234567",
+    "subject": "Show schedule",
+    "msg": "This is the message.",
+    "agentId": 1,
+    "createdAt": "2021-01-30 09:00",
+    "markRead": false
+  },
+  {
+    "id": 5,
+    "name": "School",
+    "email": "someone@email.com",
+    "phone": "03-1234567",
+    "subject": "Projects day is tomorrow",
+    "msg": "This is the message.",
+    "agentId": 1,
+    "createdAt": "2021-02-01 16:00",
+    "markRead": false
+  }
+]
