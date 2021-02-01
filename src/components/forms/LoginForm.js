@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
             <span className="visually-hidden">Email</span>
           </label>
           <input
-            id="agent-user" type="email" className="form-control" placeholder="email@example.com" name="username"
+            id="agent-user" type="email" className="form-control" placeholder="username" name="username"
             value={this.state.username} onChange={this.handleChange}
           />
         </div>

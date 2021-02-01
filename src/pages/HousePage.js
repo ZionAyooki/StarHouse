@@ -34,7 +34,11 @@ class HousePage extends React.Component {
     const houseType = this.props.categories.houseTypes.find(item => item.id === house.houseTypeId).name;
     const dealType = this.props.categories.dealTypes.find(item => item.id === house.dealTypeId).name;
     const additions = house.additions.map((item, index) => {
-      return <div key={index}>{item}</div>
+      return (
+        <li key={index}>
+          <i className="fas fa-check text-success" aria-hidden={true}></i> {item}
+        </li>
+      );
     });
     const agent = this.props.getAgent(house.agentId);
     const entryDate = moment(house.entryDate).diff(moment()) > 0 ? moment(house.entryDate).format('DD/MM/YYYY') : moment().format('DD/MM/YYYY');
@@ -42,79 +46,74 @@ class HousePage extends React.Component {
       <main>
         <section className="section">
           <div className="container single-house">
-            <div className="d-flex align-items-center justify-content-between">
-              <div>
-                <h1>{house.address}, {city}</h1>
-              </div>
-              <div>
-                <div>{houseType} for {dealType}</div>
-                <div className="text-right">${house.price}</div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <div className="house-details">
-                  <div className="house-details-item">
-                    <span className="house-details-item-title">Floor</span>
-                    <div className="house-details-item-info">
-                      <img src="images/search/elevator.svg" alt=""/>
-                      <span>{house.floor}</span>
-                    </div>
-                  </div>
-                  <div className="house-details-item">
-                    <span className="house-details-item-title">Rooms</span>
-                    <div className="house-details-item-info">
-                      <img src="images/search/double-bed.svg" alt=""/>
-                      <span>{house.rooms}</span>
-                    </div>
-                  </div>
-                  <div className="house-details-item">
-                    <span className="house-details-item-title">Size <small>(m<sup>2</sup>)</small></span>
-                    <div className="house-details-item-info">
-                      <img src="images/search/house-size.svg" alt=""/>
-                      <span>{house.size}</span>
-                    </div>
-                  </div>
-                  <div className="house-details-item">
-                    <span className="house-details-item-title">Entry</span>
-                    <div className="house-details-item-info">
-                      <img src="images/search/calendar.svg" alt=""/>
-                      <span>{entryDate}</span>
-                    </div>
-                  </div>
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-9 d-flex align-items-center justify-content-between house-page-head">
+                <div className="d-flex flex-column">
+                  <h1 className="house-page-title">{house.address}, {city}</h1>
+                  <p className="house-page-type">{houseType}</p>
                 </div>
-                <div className="house-description">
-                  <strong>Description:</strong> {house.description}
-                </div>
-                <div>More details about Arnona and Vaad etc.</div>
-              </div>
-              <div className="col-12 col-md-6 mb-3">
-                <h2>Other features</h2>
-                <div>
-                  {additions}
+                <div className="d-flex flex-column">
+                  <p className="house-page-deal">For {dealType}</p>
+                  <p className="house-page-price">${house.price} {dealType === 'rent' ? <span className="house-page-rent">/ month</span> : null}</p>
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-12 col-lg-8 mb-3">
-                <img className="img-fluid" src={house.imgUrl} alt="" />
-              </div>
-              <div className="col-12 col-lg-4">
-                <section className="agent-details">
-                  <img className="img-fluid rounded rounded-circle w-25" src={agent.imgUrl} alt=""/>
-                  <p>Listed by</p>
-                  <h5>{agent.name}</h5>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td>Email : <span>{agent.email}</span></td>
-                      </tr>
-                      <tr>
-                        <td>Phone : <span>{agent.phone}</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </section>
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-9">
+                <div className="row justify-content-between align-items-start">
+                  <div className="col-12 col-md-7 mb-3 house-page-box">
+                    <div className="house-details">
+                      <div className="house-details-item">
+                        <span className="house-details-item-title">Floor</span>
+                        <div className="house-details-item-info">
+                          <img src="images/search/elevator.svg" alt=""/>
+                          <span>{house.floor}</span>
+                        </div>
+                      </div>
+                      <div className="house-details-item">
+                        <span className="house-details-item-title">Rooms</span>
+                        <div className="house-details-item-info">
+                          <img src="images/search/double-bed.svg" alt=""/>
+                          <span>{house.rooms}</span>
+                        </div>
+                      </div>
+                      <div className="house-details-item">
+                        <span className="house-details-item-title">Size <small>(m<sup>2</sup>)</small></span>
+                        <div className="house-details-item-info">
+                          <img src="images/search/house-size.svg" alt=""/>
+                          <span>{house.size}</span>
+                        </div>
+                      </div>
+                      <div className="house-details-item">
+                        <span className="house-details-item-title">Entry</span>
+                        <div className="house-details-item-info">
+                          <img src="images/search/calendar.svg" alt=""/>
+                          <span>{entryDate}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="house-page-description">
+                      <h2 className="house-page-description-title">Description</h2>
+                      <p className="house-page-description-info">{house.description}</p>
+                    </div>
+                    <div className="house-page-features mb-3">
+                      <h2 className="house-page-features-title">House additions</h2>
+                      <ul className="house-page-features-list">
+                        {additions}
+                      </ul>
+                    </div>
+                    <img className="img-fluid d-block mx-auto" src={house.imgUrl} alt="" />
+                  </div>
+                  <div className="col-12 col-md-4 house-page-box text-center">
+                    <h2 className="house-page-agent-title">Listed by</h2>
+                    <img className="house-page-agent-img" src={agent.imgUrl} alt=""/>
+                    <p className="house-page-agent-name">{agent.name}</p>
+                    <div className="house-page-agent-details">
+                      <p><strong>Email:</strong> {agent.email}</p>
+                      <p><strong>Phone:</strong> {agent.phone}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

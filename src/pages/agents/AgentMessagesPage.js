@@ -113,7 +113,7 @@ class AgentMessagesPage extends React.Component {
             <div className="d-flex align-items-center justify-content-between mb-3">
               <h1>My Messages</h1>
             </div>
-            <div className="row message-new">
+            <div className="row message-new border-bottom border-secondary">
               <div className="col-3">Date</div>
               <div className="col-3">From</div>
               <div className="col-5">Subject</div>

@@ -648,6 +648,9 @@ body {
     background-color: #1E807D;
     color: #fff;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn-more-info:hover, .btn-more-info:focus {
     background-color: #1B7471;
@@ -774,6 +777,74 @@ body {
   font-weight: bold;
 }
 
+
+
+/* house page */
+.house-page-head {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.75rem;
+}
+.house-page-title, .house-page-type, .house-page-deal, .house-page-price {
+    margin-bottom: 0.5rem;
+}
+.house-page-title {
+    font-size: 1.875rem;
+}
+.house-page-type {
+    font-size: 1.25rem;
+}
+.house-page-deal {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.house-page-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0B8379;
+}
+.house-page-rent {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #6F758B;
+}
+.house-page-box {
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    padding: 0;
+}
+.house-page-features, .house-page-description {
+    padding: 0.5rem;
+}
+.house-page-features-title, .house-page-description-title {
+    font-size: 1.5rem;
+}
+.house-page-description-info {
+    color: #6F758B;
+    margin-bottom: 0;
+}
+.house-page-features-list {
+    list-style: none;
+    font-size: 1.125rem;
+    padding-left: 0;
+    color: #6F758B;
+}
+.house-page-agent-title {
+    font-size: 1.25rem;
+    color: #6F758B;
+    text-align: center;
+    padding: 0.5rem;
+}
+.house-page-agent-img {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 7.5rem;
+    max-width: 100%;
+    border-radius: 50%;
+}
+.house-page-agent-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
 
 
 

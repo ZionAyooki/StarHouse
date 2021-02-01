@@ -8,7 +8,7 @@ class Footer extends React.Component {
     return (
       <footer id="site-foot">
         <div className="container">
-          <div className="d-flex justify-content-center mb-3">
+          <div className="d-flex justify-content-center mb-5">
               <LogoLink />
           </div>
           <div className="row align-items-start justify-content-between ps-4 ps-sm-0">

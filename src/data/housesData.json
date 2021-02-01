@@ -27,7 +27,7 @@
     "cityId": 11,
     "address": "Hashalom 23",
     "houseTypeId": 2,
-    "entryDate": "2021-01-25",
+    "entryDate": "2021-02-01",
     "rooms": 4,
     "floor": 1,
     "price": 6000,
@@ -38,7 +38,7 @@
     "imgUrl": "images/homes/home1.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
     "agentId": 1,
-    "createdAt": "2021-01-25",
+    "createdAt": "2021-02-01",
     "closedAt": null
   },
   {
@@ -59,7 +59,7 @@
     "imgUrl": "images/homes/home1.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
     "agentId": 1,
-    "createdAt": "2021-01-25",
+    "createdAt": "2021-02-01",
     "closedAt": null
   },
   {
@@ -80,7 +80,7 @@
     "imgUrl": "images/homes/home1.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
     "agentId": 1,
-    "createdAt": "2021-01-25",
+    "createdAt": "2021-01-28",
     "closedAt": null
   },
   {
@@ -101,7 +101,7 @@
     "imgUrl": "images/homes/home1.jpg",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores consequatur deserunt dicta eaque",
     "agentId": 1,
-    "createdAt": "2021-01-25",
+    "createdAt": "2021-02-01",
     "closedAt": null
   }
 ]

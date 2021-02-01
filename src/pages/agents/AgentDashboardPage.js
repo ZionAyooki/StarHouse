@@ -10,7 +10,9 @@ class AgentDashboardPage extends React.Component {
     const monthlyAddedHouses = myHouses.filter(house => moment(house.createdAt).startOf('month').isSame(moment().startOf('month'))).length;
     const monthlyClosedDeals = myHouses.filter(house => house.closedAt && moment(house.closedAt).startOf('month').isSame(moment().startOf('month'))).length;
     const totalActive = myHouses.filter(house => !house.closedAt).length;
-    const todayMeetings = this.props.allMeetings.filter(meeting => meeting.agentId === this.props.activeUser.id && meeting.date === moment().format('YYYY-MM-DD'));
+    const todayMeetings = this.props.allMeetings.filter(meeting => meeting.agentId === this.props.activeUser.id && meeting.date === moment().format('YYYY-MM-DD')).sort((a,b) => {
+      return moment(a.date + ' ' + a.time).isBefore(moment(b.date + ' ' + b.time)) ? -1 : 1;
+    });
     const myMessages = this.props.allMessages.filter(message => message.agentId === this.props.activeUser.id);
     const totalNewMessages = myMessages.filter(message => message.markRead === false).length;
     return (
