@@ -22,12 +22,23 @@ class HousePage extends React.Component {
     }));
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      const houseId = this.props.match.params.id;
+      const house = this.props.getHouse(houseId);
+      this.setState(() => ({
+        isLoading: false,
+        house: house
+      }));
+    }
+  }
+
   render() {
     if (this.state.isLoading) {
       return <div>Loading...</div>
     }
     if (!this.state.house) {
-      return <Redirect to="/notfound" />
+      return <Redirect to="/404" />
     }
     const house = this.state.house;
     const city = this.props.categories.cities.find(item => item.id === house.cityId).name;

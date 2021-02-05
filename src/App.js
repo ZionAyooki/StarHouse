@@ -1,5 +1,5 @@
 import React from "react";
-import {HashRouter as Router, Switch, Route} from "react-router-dom";
+import {HashRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
@@ -21,6 +21,7 @@ import SearchDataJSON from "./data/searchData.json";
 import MeetingsDataJSON from "./data/meetingsData.json";
 import MessagesDataJSON from "./data/messagesData.json";
 import IdsCountersJSON from "./data/counters.json";
+import NotFoundPage from "./pages/NotFoundPage";
 
 
 class App extends React.Component {
@@ -318,7 +319,12 @@ class App extends React.Component {
               <Route exact path="/">
                 <HomePage siteData={this.state.siteData} />
               </Route>
-              {/*  Add not found page here */}
+              <Route exact path="/404">
+                <NotFoundPage />
+              </Route>
+              <Route>
+                <Redirect to="/404" />
+              </Route>
             </Switch>
           </Route>
         </Switch>
